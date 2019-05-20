@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RollMaster</string>
+    <string name="title_activity_start_screen">startScreen</string>
+</resources>
