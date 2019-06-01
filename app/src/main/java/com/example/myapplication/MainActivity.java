@@ -1,5 +1,4 @@
 package com.example.myapplication;
-
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,16 +6,12 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-
-
-
     private Random rand = new Random();
     private TextView resultTextView;
     private Button d3;
@@ -38,17 +33,14 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer dicesSound;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         diceSound= MediaPlayer.create(this, R.raw.dice);
         diceSound.setVolume(20, 20);
         dicesSound= MediaPlayer.create(this, R.raw.dices);
-
 
         CompositeOnClickListener d3groupListener = new CompositeOnClickListener();
         CompositeOnClickListener d4groupListener = new CompositeOnClickListener();
@@ -59,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
         CompositeOnClickListener d20groupListener = new CompositeOnClickListener();
         CompositeOnClickListener d100groupListener = new CompositeOnClickListener();
 
-
-
-
         d3 = findViewById(R.id.d3);
         d4 = findViewById(R.id.d4);
         d6 = findViewById(R.id.d6);
@@ -71,16 +60,12 @@ public class MainActivity extends AppCompatActivity {
         d20 = findViewById(R.id.d20);
         d100 = findViewById(R.id.d100);
 
-
         twoDice = findViewById(R.id.button2);
         threeDice = findViewById(R.id.button3);
         fourDice = findViewById(R.id.button4);
         fiveDice = findViewById(R.id.button5);
 
-
         resultTextView = findViewById(R.id.textView2);
-
-
 
         twoDice.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,28 +92,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         d3groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rollDice(3, diceNo);
             }
         });
-
         d3groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 diceNo = 1;
             }
         });
-
         d3.setOnClickListener(d3groupListener);
-
-
-
-
 
         d4groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
                 rollDice(4, diceNo);
             }
         });
-
         d4groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,30 +120,19 @@ public class MainActivity extends AppCompatActivity {
         });
         d4.setOnClickListener(d4groupListener);
 
-
-
-
-
         d6groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rollDice(6, diceNo);
             }
         });
-
         d6groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 diceNo = 1;
             }
         });
-
         d6.setOnClickListener(d6groupListener);
-
-
-
-
-
 
         d8groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,12 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 diceNo = 1;
             }
         });
-
         d8.setOnClickListener(d8groupListener);
-
-
-
-
 
         d10groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
                 rollDice(10, diceNo);
             }
         });
-
         d10groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -203,10 +161,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         d10.setOnClickListener(d10groupListener);
-
-
-
-
 
         d12groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,17 +176,12 @@ public class MainActivity extends AppCompatActivity {
         });
         d12.setOnClickListener(d12groupListener);
 
-
-
-
-
         d20groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rollDice(20, diceNo);
             }
         });
-
         d20groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -241,17 +190,12 @@ public class MainActivity extends AppCompatActivity {
         });
         d20.setOnClickListener(d20groupListener);
 
-
-
-
-
         d100groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 rollDice(100, diceNo);
             }
         });
-
         d100groupListener.addOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -262,10 +206,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
     private void rollDice(int d, int diceNo){
-
 
         numbers = new StringBuilder();
 
@@ -275,7 +216,6 @@ public class MainActivity extends AppCompatActivity {
        }
 
        for(Integer i : dices){
-
            numbers.append(i);
            numbers.append(" ");
        }
@@ -289,7 +229,6 @@ public class MainActivity extends AppCompatActivity {
        startAnimation();
        dices.clear();
        numbers = new StringBuilder();
-
 
     }
 
